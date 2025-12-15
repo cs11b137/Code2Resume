@@ -1,0 +1,84 @@
+{
+  "bullets": [
+    "负责Code2Resume核心功能交付（Vue3/TypeScript/Fastify/Tailwind）；基于材料：feat(api): add POST /api/generate with zod schema validation + retry on invalid model output",
+    "实现Code2Resume性能优化（Vue3/TypeScript/Fastify/Tailwind），在缺少精确指标的前提下，预期带来可感知的响应速度与资源占用改善；基于材料：perf(api): cache parsed signals for long materials",
+    "优化Code2Resume缺陷修复与稳定性（Vue3/TypeScript/Fastify/Tailwind）；基于材料：fix(api): return clear error message when OPENAI_API_KEY missing; suggest MOCK_MODE=true",
+    "落地Code2Resume工程化与协作流程（Vue3/TypeScript/Fastify/Tailwind）；基于材料：dx(web): build Vue3+Vite page with Tailwind, left input/right output, copy markdown/json",
+    "完善Code2Resume安全合规（Vue3/TypeScript/Fastify/Tailwind）；基于材料：security(api): enable CORS with configurable origin and restrict output to schema-only JSON",
+    "负责Code2Resume核心功能交付（Vue3/TypeScript/Fastify/Tailwind）；基于材料：This PR introduces a pipeline: parse materials into feat/perf/fix/security/dx signals, then generate resume-ready bullets and STAR items."
+  ],
+  "stars": [
+    {
+      "situation": "在 Code2Resume 项目中，需要将提交/PR/发布说明等材料快速沉淀为可用于简历的项目亮点。",
+      "task": "将工程信号抽取并组织为 STAR 风格表达（第 1 条），同时确保技术栈命中。",
+      "action": "对材料进行信号分类（feat/perf/fix/security/dx），结构化提取要点并生成动词开头的项目亮点。",
+      "result": "形成可面试表达的亮点：负责Code2Resume核心功能交付（Vue3/TypeScript/Fastify/Tailwind）；基于材料：feat(api): add POST /api/generate with zod schema validation + retry on invalid model output"
+    },
+    {
+      "situation": "在 Code2Resume 项目中，需要将提交/PR/发布说明等材料快速沉淀为可用于简历的项目亮点。",
+      "task": "将工程信号抽取并组织为 STAR 风格表达（第 2 条），同时确保技术栈命中。",
+      "action": "对材料进行信号分类（feat/perf/fix/security/dx），结构化提取要点并生成动词开头的项目亮点。",
+      "result": "形成可面试表达的亮点：实现Code2Resume性能优化（Vue3/TypeScript/Fastify/Tailwind），在缺少精确指标的前提下，预期带来可感知的响应速度与资源占用改善；基于材料：perf(api): cache parsed signals for long materials"
+    },
+    {
+      "situation": "在 Code2Resume 项目中，需要将提交/PR/发布说明等材料快速沉淀为可用于简历的项目亮点。",
+      "task": "将工程信号抽取并组织为 STAR 风格表达（第 3 条），同时确保技术栈命中。",
+      "action": "对材料进行信号分类（feat/perf/fix/security/dx），结构化提取要点并生成动词开头的项目亮点。",
+      "result": "形成可面试表达的亮点：优化Code2Resume缺陷修复与稳定性（Vue3/TypeScript/Fastify/Tailwind）；基于材料：fix(api): return clear error message when OPENAI_API_KEY missing; suggest MOCK_MODE=true"
+    },
+    {
+      "situation": "在 Code2Resume 项目中，需要将提交/PR/发布说明等材料快速沉淀为可用于简历的项目亮点。",
+      "task": "将工程信号抽取并组织为 STAR 风格表达（第 4 条），同时确保技术栈命中。",
+      "action": "对材料进行信号分类（feat/perf/fix/security/dx），结构化提取要点并生成动词开头的项目亮点。",
+      "result": "形成可面试表达的亮点：落地Code2Resume工程化与协作流程（Vue3/TypeScript/Fastify/Tailwind）；基于材料：dx(web): build Vue3+Vite page with Tailwind, left input/right output, copy markdown/json"
+    },
+    {
+      "situation": "在 Code2Resume 项目中，需要将提交/PR/发布说明等材料快速沉淀为可用于简历的项目亮点。",
+      "task": "将工程信号抽取并组织为 STAR 风格表达（第 5 条），同时确保技术栈命中。",
+      "action": "对材料进行信号分类（feat/perf/fix/security/dx），结构化提取要点并生成动词开头的项目亮点。",
+      "result": "形成可面试表达的亮点：完善Code2Resume安全合规（Vue3/TypeScript/Fastify/Tailwind）；基于材料：security(api): enable CORS with configurable origin and restrict output to schema-only JSON"
+    },
+    {
+      "situation": "在 Code2Resume 项目中，需要将提交/PR/发布说明等材料快速沉淀为可用于简历的项目亮点。",
+      "task": "将工程信号抽取并组织为 STAR 风格表达（第 6 条），同时确保技术栈命中。",
+      "action": "对材料进行信号分类（feat/perf/fix/security/dx），结构化提取要点并生成动词开头的项目亮点。",
+      "result": "形成可面试表达的亮点：负责Code2Resume核心功能交付（Vue3/TypeScript/Fastify/Tailwind）；基于材料：This PR introduces a pipeline: parse materials into feat/perf/fix/security/dx signals, then generate resume-ready bullets and STAR items."
+    }
+  ],
+  "skills": [
+    "Vue3",
+    "TypeScript",
+    "Fastify",
+    "Tailwind",
+    "Vite",
+    "Eslint",
+    "Prettier",
+    "CI/CD",
+    "Testing",
+    "Linting",
+    "Security",
+    "Compliance"
+  ],
+  "metrics": [
+    "延迟/吞吐优化（需要补充精确数字）"
+  ],
+  "risks": [
+    "风险：缺少可验证指标时容易夸大收益，需要保持保守表述并补齐数据来源。",
+    "风险：流程/工程化变更需要团队共识与配套文档。"
+  ],
+  "assumptions": [
+    "假设：存在用户可感知的性能改善，但缺少 p95/p99 等精确指标。"
+  ],
+  "missing_info_questions": [
+    "性能优化前后有哪些量化数据（如 p95/p99、QPS/RPS）？",
+    "安全合规具体对齐了哪些标准（如等保/GDPR/SOC2），产出了哪些审计材料？"
+  ],
+  "meta": {
+    "language": "zh",
+    "style": "balanced",
+    "createdAt": "2025-12-15T00:00:00.000Z",
+    "model": "gpt-4.1-mini",
+    "mockMode": true
+  }
+}
+

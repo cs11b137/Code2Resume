@@ -1,0 +1,20 @@
+Project: Code2Resume
+
+GitHub fetch (optional):
+- repo: owner/name
+- token: (not stored; backend-only)
+- commitCount: 20
+- prCount: 20
+
+commit log:
+- feat(api): add POST /api/generate with zod schema validation + retry on invalid model output
+- perf(api): cache parsed signals for long materials
+- fix(api): return clear error message when OPENAI_API_KEY missing; suggest MOCK_MODE=true
+- dx(web): build Vue3+Vite page with Tailwind, left input/right output, copy markdown/json
+- security(api): enable CORS with configurable origin and restrict output to schema-only JSON
+
+PR description:
+This PR introduces a pipeline: parse materials into feat/perf/fix/security/dx signals, then generate resume-ready bullets and STAR items.
+
+release notes:
+v0.1.0 - MVP shipped with mock mode, schema validation test, and sample input/output.
