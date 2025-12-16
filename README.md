@@ -1,56 +1,56 @@
 # Code2Resume (MVP)
 
-把用户提供的仓库材料（commit log / PR 描述 / release notes / 项目介绍文本）转换为**可用于简历的项目亮点**（STAR 风格），输出结构化 JSON + Markdown，并提供可视化页面与复制功能。
+Turn user-provided repository materials (commit logs / PR descriptions / release notes / project intro text) into **resume-ready project highlights** in the STAR format, outputting structured **JSON + Markdown**, with a visual UI and one-click copy.
 
-## Monorepo 结构
+## Monorepo Structure
 
-- `apps/api`: Node.js + TypeScript + Fastify 后端
-- `apps/web`: Vue3 + TypeScript + Vite 前端
+- `apps/api`: Node.js + TypeScript + Fastify backend
+- `apps/web`: Vue3 + TypeScript + Vite frontend
 
-## 环境变量
+## Environment Variables
 
-复制并修改根目录环境变量：
+Copy and edit the root environment file:
 
 ```bash
 cp .env.example .env
 ```
 
-关键变量：
-- `MOCK_MODE=true`：不调用模型，返回稳定 mock 数据（推荐先用它跑通）
-- `OPENAI_API_KEY`：关闭 `MOCK_MODE` 时需要
-- `CORS_ORIGIN`：允许的前端 origin（默认 `http://localhost:5173`）
-- `PORT`：后端端口（默认 `8787`）
+Key variables:
+- `MOCK_MODE=true`: Don’t call the model; return stable mock data (recommended to get things running first)
+- `OPENAI_API_KEY`: Required when `MOCK_MODE` is disabled
+- `CORS_ORIGIN`: Allowed frontend origin (default `http://localhost:5173`)
+- `PORT`: Backend port (default `8787`)
 
-前端可选：
+Frontend (optional):
 - `VITE_API_BASE_URL=http://localhost:8787`
 
-## 本地启动
+## Local Development
 
-需要 `pnpm`（Node 18+）。
+Requires `pnpm` (Node 18+).
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-- Web: http://localhost:5173
-- API: http://localhost:8787/health
+- Web: http://localhost:5173  
+- API: http://localhost:8787/health  
 
-## Mock 模式
+## Mock Mode
 
-`.env` 中设置：
+Set in `.env`:
 
 ```bash
 MOCK_MODE=true
 ```
 
-后端会根据你的输入生成“看起来合理”的结果，但不会调用模型，适合本地开发与演示。
+The backend will generate “reasonable-looking” results based on your input, but will **not** call any model—great for local development and demos.
 
 ## API
 
 ### `POST /api/generate`
 
-请求体：
+Request body:
 
 ```json
 {
@@ -63,7 +63,7 @@ MOCK_MODE=true
 }
 ```
 
-成功响应固定 schema（字段不可缺失）：
+Successful responses follow a fixed schema (fields must not be missing):
 - `bullets: string[]`
 - `stars: { situation; task; action; result }[]`
 - `skills: string[]`
@@ -73,7 +73,7 @@ MOCK_MODE=true
 - `missing_info_questions: string[]`
 - `meta: { language; style; createdAt; model; mockMode }`
 
-失败响应示例：
+Failure response example:
 
 ```json
 {
@@ -85,9 +85,9 @@ MOCK_MODE=true
 
 ### `POST /api/fetch-material`
 
-从 GitHub API 拉取最近 N 条 commit message / PR title+body，并拼接成 `material` 文本，供后续生成。
+Fetch the latest N commit messages / PR titles + bodies from the GitHub API, then concatenate them into a single `material` string for generation.
 
-请求体：
+Request body:
 
 ```json
 {
@@ -98,7 +98,7 @@ MOCK_MODE=true
 }
 ```
 
-响应体：
+Response body:
 
 ```json
 {
@@ -109,23 +109,23 @@ MOCK_MODE=true
 }
 ```
 
-说明：
-- `token` 只在后端使用，不落库；公开仓库可不填。
-- 若遇到模型不可用或 schema 失败，建议开启 `MOCK_MODE=true` 先跑通流程。
+Notes:
+- `token` is used **only** on the backend and is not stored; for public repos you can omit it.
+- If the model is unavailable or schema validation fails, enable `MOCK_MODE=true` to run through the full flow first.
 
-## 示例材料与输出
+## Sample Input & Output
 
-- 输入：`sample-input.txt`
-- 输出：`sample-output.json`
+- Input: `sample-input.txt`
+- Output: `sample-output.json`
 
-## 测试
+## Testing
 
 ```bash
 pnpm --filter @code2resume/api test
 ```
 
-该测试会在 `MOCK_MODE=true` 下调用 `POST /api/generate` 并使用 zod 做 schema 校验。
+This test calls `POST /api/generate` with `MOCK_MODE=true` and validates the response schema using Zod.
 
-## 导出 PDF
+## Export PDF
 
-前端支持将生成的 Markdown 渲染为简历项目模块并导出 PDF（基于 `html2canvas` + `jspdf`）。
+The frontend supports rendering the generated Markdown as a resume project module and exporting it to PDF (based on `html2canvas` + `jspdf`).
